@@ -1,0 +1,52 @@
+form {
+    text-align: center;
+    width: 40%;
+    margin: 10px auto;
+    line-height: 1.2;
+  }
+  form p {
+    padding-left: 20px;
+  }
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  em.error {
+    margin-left: 5px;
+    padding: 2px 4px;
+    background-color: red;
+    color: white;
+    border-radius: 2px;
+  }
+  
+  .has.error {
+    background-color: yellow;
+  }
+
+  .form-dislpay {
+      text-align: center;
+      border: 3px solid black;
+      padding-top: 60px;
+      padding-bottom: 60px;
+      background-color: #f2f2f2;
+    
+  }
+
+  label {
+    font-style: italic;
+    font-size: large;
+  }
+
+.form-comment {
+    height: 200px;
+}
+
+@media (max-width: 414px) {
+    form {
+        text-align: center;
+        margin: 10px auto;
+        line-height: 1.2;
+        width: auto;
+      }
+        
+    }
