@@ -13,22 +13,23 @@ function Navegation(props) {
             <button className="navbar-toggler" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
             </button>
-                <div className="collapse navbar-collapse" id="navbarSupportedContent">
+            <div className="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul className="navbar-nav header__nav-list">
                     <li className="nav-item">
-                        <Link to="/" className="header__nav-button nav-link btn btn-primary">Home</Link>
+                        <Link to="/" className="header__nav-button btn btn-success">Home</Link>
                     </li>
                     <li className="nav-item">
-                        <Link to="/products" className="header__nav-button nav-link btn btn-success">Products</Link>
+                        <Link to="/products" className="header__nav-button btn btn-success">Products</Link>
                     </li>
                     <li className="nav-item">
-                        <Link to="/contact" className="header__nav-button nav-link btn btn-warning">Contact</Link>
+                        <Link to="/contact" className="header__nav-button btn btn-success">Contact</Link>
                     </li>
                 </ul>
                 {props.location.pathname === '/products' &&
-                    <form onSubmit={event => event.preventDefault()} className="form-inline my-2 my-lg-0 search-bar">
-                        <input className="input-space" type="text" onChange={event => props.nameFilter(event)} placeholder="Search for names.." title="Type in a name" />
-                        <select className="selectChanges" onChange={e => props.dropboxChange(e)}>
+                    <form claaName= "sel_typeFilter" onSubmit={event => event.preventDefault()}>
+                        <input type="text" onChange={event => props.nameFilter(event)} placeholder="Search for names.." title="Type in a name" />
+                        
+                        <select onChange={e => props.dropboxChange(e)}>
                             <option value="All">All</option>
                             <option value="processor">Processor</option>
                             <option value="watch">Watch</option>
@@ -45,11 +46,6 @@ function Navegation(props) {
                             <option value="lessthan400">Less than 400</option>
                             <option value="morethan400">More than $400</option>
                         </select>
-                        {/* <div>
-                    <button type="button" className="btn btn-primary filterBtn" onClick={props.filterLow}>Less than $400</button>
-                    <button type="button" className="btn btn-primary filterBtn" onClick={props.filterHigh}>More than $400</button>
-                    <button type="button" className="btn btn-primary filterBtn" onClick={props.allProducts}>All Products</button>
-                </div> */}
                     </form>
                 }
             </div>

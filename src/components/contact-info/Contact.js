@@ -27,22 +27,22 @@ function Contact(props) {
     }
     if (errorFields.length) {
       alert(`Please fill out the following fields: ${errorFields.join(', ')}`);
-    }else {
+    } else {
       alert(`Thank you ${fullName} we have recieve your message`)
     }
   }
 
-  return(
+  return (
     <form className="cmxform form-dislpay" id="contactForm" method="git" action="#">
       <fieldset>
         <h2>Provide your personal info (won't be published) and add a comment with your feedback</h2>
-          <div className="form-spacing">
+        <div className="form-spacing">
           <label for="cname">Full Name (required)</label>
-          <input id="cname" name="name" minlength="2" type="text" required placeholder="Full Name"/>
+          <input id="cname" name="name" minlength="2" type="text" required placeholder="Full Name" />
         </div>
         <div className="form-spacing">
           <label for="cemail">email (required)</label>
-          <input id="cemail" type="email" name="email" required placeholder="email"/>
+          <input id="cemail" type="email" name="email" required placeholder="email" />
         </div>
         <div className="form-spacing">
           <label for="phone">Phone Number (required)</label>
@@ -58,5 +58,5 @@ function Contact(props) {
       </fieldset>
     </form>
   )
-}     
+}
 export default Contact;
