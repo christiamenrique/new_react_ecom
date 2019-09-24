@@ -1,5 +1,5 @@
 import React from "react";
-import "./specials.css";
+import "./specials.scss";
 
 function Specials(props) {
   return (

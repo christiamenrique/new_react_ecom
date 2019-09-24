@@ -15,21 +15,22 @@ function Navegation(props) {
             </button>
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul className="navbar-nav header__nav-list">
-                    <li className="nav-item">
-                        <Link to="/" className="header__nav-button btn btn-success">Home</Link>
+                    <li className="nav-item" data-toggle="collapse" data-target="#navbarSupportedContent">
+                        <Link to="/" className="header__nav-button btn">Home</Link>
                     </li>
-                    <li className="nav-item">
-                        <Link to="/products" className="header__nav-button btn btn-success">Products</Link>
+                    <li className="nav-item" data-toggle="collapse" data-target="#navbarSupportedContent">
+                        <Link to="/products" className="header__nav-button btn">Products</Link>
                     </li>
-                    <li className="nav-item">
-                        <Link to="/contact" className="header__nav-button btn btn-success">Contact</Link>
+                    <li className="nav-item" data-toggle="collapse" data-target="#navbarSupportedContent">
+                        <Link to="/contact" className="header__nav-button btn">Contact</Link>
                     </li>
                 </ul>
-                {props.location.pathname === '/products' &&
-                    <form claaName= "sel_typeFilter" onSubmit={event => event.preventDefault()}>
-                        <input type="text" onChange={event => props.nameFilter(event)} placeholder="Search for names.." title="Type in a name" />
+                {props.location.pathname === '/products' && 
+                    <form className="filter" onSubmit={event => event.preventDefault()}>
+                        <input className="typeFilter" type="text" onChange={event => props.nameFilter(event)} placeholder="Search for names.." title="Type in a name" />
                         
-                        <select onChange={e => props.dropboxChange(e)}>
+                        <select className="selFilter" onChange={e => props.dropboxChange(e)}>
+                            <option value= "disabled">Select Category</option>
                             <option value="All">All</option>
                             <option value="processor">Processor</option>
                             <option value="watch">Watch</option>

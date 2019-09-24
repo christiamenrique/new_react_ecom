@@ -1,5 +1,5 @@
 import React from "react";
-import "./style.css";
+import "./style.scss";
 
 
 function ProductsCard(props) {
@@ -12,7 +12,7 @@ function ProductsCard(props) {
         <h2>{props.name}</h2>
         <h3 className="price-modify">{props.price}</h3>
         <p>{props.description}</p>
-        <button type="button" class="btn btn-success">Buy Now</button>
+        <button type="button" className="btn btn-success">Buy Now</button>
       </div>
     </div>
   );

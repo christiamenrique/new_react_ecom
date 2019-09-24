@@ -10,6 +10,7 @@ function Product(props) {
       {props.products.map((item) => {
         return (
           <ProductCard
+            key={item.name}
             id={item.id}
             name={item.name}
             image={item.image}

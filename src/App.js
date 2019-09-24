@@ -4,7 +4,7 @@ import Contact from "./components/contact-info/Contact";
 import Footer from "./components/footer/Footer";
 import Wrapper from "./components/Wrapper/index";
 import products from "./products.json";
-import "./App.css";
+import "./App.scss";
 import Navegation from "./components/navegation/Nav";
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import MainPage from "./components/main-page/MainPage"

@@ -1,5 +1,6 @@
 import React from "react";
-import "./contact.css"
+import "./contact.scss";
+import Jumbal from "./Jumbotron";
 
 function Contact(props) {
 
@@ -33,30 +34,33 @@ function Contact(props) {
   }
 
   return (
-    <form className="cmxform form-dislpay" id="contactForm" method="git" action="#">
-      <fieldset>
+    <React.Fragment>
+      <Jumbal />
+      <form className="cmxform form-dislpay" id="contactForm" method="git" action="#">
         <h2>Provide your personal info (won't be published) and add a comment with your feedback</h2>
-        <div className="form-spacing">
-          <label for="cname">Full Name (required)</label>
-          <input id="cname" name="name" minlength="2" type="text" required placeholder="Full Name" />
-        </div>
-        <div className="form-spacing">
-          <label for="cemail">email (required)</label>
-          <input id="cemail" type="email" name="email" required placeholder="email" />
-        </div>
-        <div className="form-spacing">
-          <label for="phone">Phone Number (required)</label>
-          <input type="number" id="cphone" placeholder="Phone Number" />
-        </div>
-        <div className="form-spacing">
-          <label for="ccomment">Your comment (required)</label>
-          <textarea className="form-comment" id="ccomment" name="comment" required></textarea>
-        </div>
-        <div className="form-spacing">
-          <button onClick={formValidation} type="submit" className="btn btn-primary mb-2">Submit</button>
-        </div>
-      </fieldset>
-    </form>
+        <fieldset>
+          <div className="form-spacing">
+            <label htmlFor="cname">Full Name *</label>
+            <input id="cname" name="name" minLength="2" type="text" required />
+          </div>
+          <div className="form-spacing">
+            <label htmlFor="cemail">Email *</label>
+            <input id="cemail" type="email" name="email" required />
+          </div>
+          <div className="form-spacing">
+            <label htmlFor="phone">Phone Number *</label>
+            <input type="number" id="cphone" required/>
+          </div>
+          <div className="form-spacing">
+            <label htmlFor="ccomment">Your comment *</label>
+            <textarea className="form-comment" id="ccomment" name="comment" required></textarea>
+          </div>
+          <div className="form-spacing">
+            <button onClick={formValidation} type="submit" className="btn btn-primary mb-2">Submit</button>
+          </div>
+        </fieldset>
+      </form>
+    </React.Fragment>
   )
 }
 export default Contact;
