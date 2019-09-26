@@ -14,4 +14,4 @@ function Jumbotron() {
     )
 }
 
-    export default Jumbotron;
+export default Jumbotron;

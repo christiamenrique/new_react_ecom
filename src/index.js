@@ -5,6 +5,7 @@ import App from './App';
 // import Products from './product/Product';
 import * as serviceWorker from './serviceWorker';
 
+//sends this to index.html which put it up to the page
 ReactDOM.render(<App />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change

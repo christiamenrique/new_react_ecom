@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.scss";
 
-
+// structure the cards
 function ProductsCard(props) {
   return (
     <div className="card-cont">
@@ -10,7 +10,7 @@ function ProductsCard(props) {
       </div>
       <div className="text-content">
         <h2>{props.name}</h2>
-        <h3 className="price-modify">{props.price}</h3>
+        <h3 className="price-modify">${props.price}</h3>
         <p>{props.description}</p>
         <button type="button" className="btn btn-success">Buy Now</button>
       </div>
