@@ -25,20 +25,25 @@ var connection = mysql.createConnection({
 connection.connect(function(err) {
   if (err) throw err;
   connection.query("SELECT * FROM products", function(err, data){
+    // console.table(data)  
   })  
 });
 
 //api catalogue  
 
 // index page
-app.get('/', function (req, res) {
-  res.send('Hello World')
-})
+// app.get('/', function (req, res) {
+//   res.send('Hello World')
+// })
 
 // fetch all products
 app.get('/products', (req, res) => {
   connection.query("SELECT * FROM products INNER JOIN prices ON products.product_id =prices.product_productID", function(err, data){    
+    if (err) {
+      console.log(err)
+    }
     res.send(data)
+    console.table(data)
   })
 })
 
@@ -71,6 +76,13 @@ app.get('/contacts', (req, res) => {
   })
 })
 
+app.get('/prices', (req, res) => {
+  connection.query("SELECT * FROM prices", function(err, data){    
+    res.send(data)
+    console.table(data)
+  })
+})
+
 
 // app.post('/contacts/new', (req, res) => {
 //   connection.query("INSERT INTO contacts (fullName, email, phoneNumber, comments) Values (?)", function(err, data){ 
@@ -91,30 +103,30 @@ app.get('/contacts', (req, res) => {
 // })
 
 //posting a new contact
-app.post('/contacts/new', (req, res) => {
-  const {fullName, email, phoneNumber, comments} = req.body;
-  connection.query(`INSERT INTO contacts (fullName, email, phoneNumber, comments) Values (
-    "${fullName}",
-    "${email}",
-    "${phoneNumber}",
-    "${comments}"
-  )`, function (err, result) {
-    if (err) throw err;
-    console.log("1 record inserted");
-    res.send(result);
-  })
-})
+// app.post('/contacts/new', (req, res) => {
+//   const {fullName, email, phoneNumber, comments} = req.body;
+//   connection.query(`INSERT INTO contacts (fullName, email, phoneNumber, comments) Values (
+//     "${fullName}",
+//     "${email}",
+//     "${phoneNumber}",
+//     "${comments}"
+//   )`, function (err, result) {
+//     if (err) throw err;
+//     console.log("1 record inserted");
+//     res.send(result);
+//   })
+// })
 
 
-function validateContact(contacts) {
-  const schema = {
-  fullName: Joi.string().min(3).required(),
-  email: Joi.string().email().required(),
-  phoneNumber: Joi.string().trim().regex(/^[0-9]{7,10}$/).required(),
-  comments: Joi.string().required(),
-  }
-  return Joi.validate(employee, schema);
-}
+// function validateContact(contacts) {
+//   const schema = {
+//   fullName: Joi.string().min(3).required(),
+//   email: Joi.string().email().required(),
+//   phoneNumber: Joi.string().trim().regex(/^[0-9]{7,10}$/).required(),
+//   comments: Joi.string().required(),
+//   }
+//   return Joi.validate(employee, schema);
+// }
 
 
 // // update contacts

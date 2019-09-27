@@ -21,7 +21,7 @@ class App extends React.Component {
 
   //mount products from db 
   componentDidMount() {
-    fetch('//localhost:3500/products')
+    fetch('/products')
       .then(response => response.json())
       .then(data => {
         this.setState({
@@ -33,7 +33,7 @@ class App extends React.Component {
   dropboxChange = (event) => {
     console.log(event.target.value)
     if (event.target.value !== 'Select Category') {
-      fetch(`//localhost:3500/producttypefilter/${event.target.value}`)
+      fetch(`/producttypefilter/${event.target.value}`)
         .then(response => response.json())
         .then(data => {
           this.setState({
@@ -41,7 +41,7 @@ class App extends React.Component {
           })
         })
     } else {
-      fetch('//localhost:3500/products')
+      fetch('/products')
         .then(response => response.json())
         .then(data => {
           this.setState({
@@ -53,7 +53,7 @@ class App extends React.Component {
   //price filter
   priceChange = (event) => {
     if (event.target.value === 'lessthan400') {
-      fetch('//localhost:3500/productpricefilter/less')
+      fetch('/productpricefilter/less')
         .then(response => response.json())
         .then(data => {
           this.setState({
@@ -61,7 +61,7 @@ class App extends React.Component {
           })
         })
     } else if (event.target.value === 'morethan400') {
-      fetch('//localhost:3500/productpricefilter/more')
+      fetch('/productpricefilter/more')
         .then(response => response.json())
         .then(data => {
           this.setState({
@@ -69,7 +69,7 @@ class App extends React.Component {
           })
         })
     } else {
-      fetch('//localhost:3500/products')
+      fetch('/products')
         .then(response => response.json())
         .then(data => {
           this.setState({
@@ -84,6 +84,7 @@ class App extends React.Component {
     return (
       <Wrapper>
         <Router>
+        <React.Fragment>
           <Navegation
             dropboxChange={this.dropboxChange}
             priceChange={this.priceChange} />
@@ -93,6 +94,7 @@ class App extends React.Component {
             <Route path="/contact" render={() => <Contact />} />
           </Switch>
           <Footer />
+          </React.Fragment>
         </Router>
       </Wrapper>
     );

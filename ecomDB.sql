@@ -8,7 +8,7 @@ CREATE TABLE products(
   product_name VARCHAR(100) NOT NULL,
   product_description VARCHAR(1000) NOT NULL,
   quantity INT NOT NULL,
-  img LONGBLOB NOT NULL,
+  img VARCHAR(250) NOT NULL,
   typeOfproduct VARCHAR(100) NOT NULL,
   primary key(product_id)
 );
@@ -17,7 +17,7 @@ CREATE TABLE contacts(
   contact_id INT AUTO_INCREMENT NOT NULL,
   fullName VARCHAR(40) NOT NULL,
   email VARCHAR(100) NOT NULL,
-  phoneNumber BIGINT(10) NOT NULL,
+  phoneNumber VARCHAR(15) NOT NULL,
   comments VARCHAR(5000) NOT NULL,
   primary key(contact_id)
 );
@@ -25,8 +25,15 @@ CREATE TABLE contacts(
 CREATE TABLE prices(
   price_id INT AUTO_INCREMENT NOT NULL,
   price DECIMAL(10,2) NOT NULL,
-  primary key(price_id)
-);
+  product_productID INT NOT NULL,
+  primary key(price_id),
+  INDEX `product_idx` (`product_productID` ASC) VISIBLE,
+  CONSTRAINT product_productID 
+  FOREIGN KEY (product_productID)
+  REFERENCES `ecomDB`.`products`(`product_id`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION);
+  
 
 INSERT INTO products (product_name, product_description, quantity, img,  typeOfproduct)
 VALUES (
@@ -139,7 +146,7 @@ INSERT INTO contacts (fullName, email, phoneNumber, comments)
 VALUES (
 		"Jeff Hrought", 
 		"jeffhrougth@gmail.com", 
-		7043854568, 
+		'7043854568', 
 		"Just received the PAL/NTSC converter for my DVD/VCR combo to my TV. It works perfectly! I must confess I was skeptical but it works great! Wonderful picture!. 
 		Thank you very much!"
 ),
@@ -147,7 +154,7 @@ VALUES (
 	  (
 		"Christopher Desmal",
         "christopherdesmal@gmail.com",
-        7867456578,
+        '7867456578',
 		"I got my CMD-1500 and I have to say it’s a great convertor!! 
         I bought it for my PAL Phillips Videopac G7400 (Odyssey3) Videogame system to play on my NTSC T.V."
 	),
@@ -155,21 +162,21 @@ VALUES (
     (
 		"James Hawkins",
         "jameshawkins.re@gmail.com",
-        7767950516,
+        '7767950516',
 		"I wanted to let you know that I am quite pleased with you fast delivery & your product , which works well. As advertised"
 	),
     
     (
 		"Linda Cals",
         "lindacalsos.tr@gmail.com",
-        404185277,
+        '404185277',
 		"Thank you for your prompt reply.  I received the remaining two boxes yesterday."
 	),
     
       (
 		"Jim Fernandez",
         "jimfernandez.tr@gmail.com",
-        7685679081,
+        '7685679081',
 		"Victor B, Sorry, I forgot to email you earlier. I recieved the tv in about one week and it is in perfect condition and works like a dream.
         Thank you so much for excellent customer service and an excellent product."
 	),
@@ -177,7 +184,7 @@ VALUES (
     (
 		"Les Angel", 
 		"lesangel.68@gmail.com", 
-		5094584325, 
+		'5094584325', 
 		"We received it (CMD-850) today in the mail. It was much smaller, lighter and simpler than I had imagined, but when we plugged it in, it performed excellently. 
         We get a superb picture. Now you have an advocate customer. Thanks."
 	),
@@ -185,45 +192,45 @@ VALUES (
 	  (
 		"Frank Burke",
         "frankburke54@gmail.com",
-        906897345,
+        '906897345',
 		"Just wanted to tell you that I am really pleased with the converter. Much better than using the Samsung SV-5000W."
 	 ),
     
     (
 		"Trevor Thomas",
         "treverthomas54.re@gmail.com",
-        3056284561,
+        '3056284561',
 		"I received the (DVC-920) converter last week Monday. Excellent service and I am very happy with the machine."
 	),
     
     (
 		"Rosell Even",
         "roselleven.te@gmail.com",
-        1025978970,
+        '1025978970',
 		"I just wanted to thank you guys. I purchased a Daewood DVD 5800 from you in August and am plesantly suprised by how well it performs for such a reasonable price.."
 	),
     
       (
 		"Jhon Harm",
         "jhonharm@gmail.com",
-        8795471777,
+        '8795471777',
 		"Thank you for great service.  I will be looking the R520M next week. 
 		Thanks for offering the R520M at the same price as the T260"
 	);
 
-INSERT INTO prices (price)
-VALUES (527.99),
-		(399.99),
-        (373.45),
-        (599.00),
-        (1399.99),
-        (129.99),
-        (489.99),
-        (299.00),
-        (129.99),
-        (499.99),
-        (499.00),
-        (379.00);
+INSERT INTO prices (price, product_productID)
+VALUES (527.99, 1),
+		(399.99, 2),
+        (373.45, 3),
+        (599.00, 4),
+        (1399.99,5),
+        (129.99, 6),
+        (489.99, 7),
+        (299.00, 8),
+        (129.99, 9),
+        (499.99, 10),
+        (499.00, 11),
+        (379.00, 12);
         
-SELECT * FROM products prices;
+SELECT * FROM products INNER JOIN prices ON products.product_id = prices.product_productID;
 
