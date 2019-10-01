@@ -3,6 +3,7 @@ const request = require('request');
 
 //  The unit tests uses mocha and chai 
 // it include both positive and negative tests
+describe ("", () => {
 it('It should take the user to the home page', (done) => {
     request('http://localhost:3500/', (err, response, body) => {
         expect(body).to.equal(200)
@@ -20,4 +21,5 @@ it('It should take user to the contact page', (done) => {
     request('http://localhost:3500/contact', (err, response, body) => {
         expect(body).to.equal(200)
     })
+})
 })

@@ -140,3 +140,5 @@
 [0mGET /products [36m304 [0m2.362 ms - -[0m
 [0mGET /products [32m200 [0m6.019 ms - 6399[0m
 [0mGET /products [32m200 [0m3.279 ms - 6399[0m
+[0mGET /products [36m304 [0m4.490 ms - -[0m
+[0mGET /products [36m304 [0m4.572 ms - -[0m
