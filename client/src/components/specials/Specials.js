@@ -1,6 +1,7 @@
 import React from "react";
 import "./specials.scss";
 
+// image
 function Specials(props) {
   return (
     <div>

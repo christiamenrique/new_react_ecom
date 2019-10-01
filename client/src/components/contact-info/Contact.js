@@ -2,6 +2,7 @@ import React from "react";
 import "./contact.scss";
 import Jumbal from "./Jumbotron";
 
+//form validation
 function Contact(props) {
   const formValidation = () => {
     const errorFields = [];
@@ -9,7 +10,7 @@ function Contact(props) {
     const email = document.getElementById("email").value;
     const phoneNumber = document.getElementById("phone").value;
     const comments = document.getElementById("comments").value;
-
+    //if is not field it will alert that it needs a name, email, phone, comments
     if (fullName === '') {
       errorFields.push('name');
     }
@@ -31,7 +32,7 @@ function Contact(props) {
       alert(`Thank you ${fullName} we have recieve your message`);
     }
   }
-
+//form
   return (
     <React.Fragment>
       <Jumbal />
@@ -48,7 +49,7 @@ function Contact(props) {
           </div>
           <div className="form-spacing">
             <label htmlFor="phone">Phone Number <mark class="requiredInput">*</mark></label>
-            <input  type="number" id="phone" name="phoneNumber" required/>
+            <input type="number" id="phone" name="phoneNumber" required />
           </div>
           <div className="form-spacing">
             <label htmlFor="comment">Your comment <mark class="requiredInput">*</mark></label>

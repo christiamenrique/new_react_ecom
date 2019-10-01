@@ -86,17 +86,17 @@ class App extends React.Component {
     return (
       <Wrapper>
         <Router>
-        <React.Fragment>
-          <Navegation
-            dropboxChange={this.dropboxChange}
-            priceChange={this.priceChange} />
-          <Switch>
-            <Route exact path="/" render={() => <MainPage />} />
-            <Route path="/products" render={() => <Product products={this.state.products} />} />
-            <Route path="/contact" render={() => <Contact />} />
-            <Route path="/contacts/add" render={() => <AfterSubmit />} />
-          </Switch>
-          <Footer />
+          <React.Fragment>
+            <Navegation
+              dropboxChange={this.dropboxChange}
+              priceChange={this.priceChange} />
+            <Switch>
+              <Route exact path="/" render={() => <MainPage />} />
+              <Route path="/products" render={() => <Product products={this.state.products} />} />
+              <Route path="/contact" render={() => <Contact />} />
+              <Route path="/contacts/add" render={() => <AfterSubmit />} />
+            </Switch>
+            <Footer />
           </React.Fragment>
         </Router>
       </Wrapper>

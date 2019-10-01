@@ -2,15 +2,14 @@
   width: 100%;
 }
 
-.fullLogo{
-  color:white;
+.fullLogo {
+  color: white;
 }
-.fullLogo:hover{
+.fullLogo:hover {
   color: #007bff;
   cursor: pointer;
   text-decoration: none;
-  
-} 
+}
 
 .fa-store-alt:before {
   margin-left: 60px;
@@ -51,14 +50,14 @@
   }
 }
 
-.category{
+.category {
   border-radius: 15px;
   background-color: white;
   height: 40px;
   width: 120px;
 }
 
-.priceRange{
+.priceRange {
   border-radius: 15px;
   background-color: white;
   height: 40px;
@@ -69,6 +68,6 @@
 .filter {
   display: flex;
   align-items: center;
-//   //   justify-content: space-between;
-//   //   margin: 10px;
+  //   //   justify-content: space-between;
+  //   //   margin: 10px;
 }

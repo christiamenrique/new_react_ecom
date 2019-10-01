@@ -9,9 +9,9 @@ function Navegation(props) {
         <nav className="navbar navbar-expand-lg navbar-dark">
             <div className="header__wrapper navbar-brand">
                 <Link to="/" class="fullLogo">
-            <i class="fas fa-store-alt"></i>
-            <p class="logo">The Best Electronic</p>
-            </Link>
+                    <i class="fas fa-store-alt"></i>
+                    <p class="logo">The Best Electronic</p>
+                </Link>
             </div>
             <button className="navbar-toggler" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
@@ -28,6 +28,7 @@ function Navegation(props) {
                         <Link to="/contact" className="header__nav-button btn">Contact</Link>
                     </li>
                 </ul>
+                {/* stops the nav var from displaying in home and contact */}
                 {props.location.pathname === '/products' &&
                     <form className="filter" onSubmit={event => event.preventDefault()}>
                         {/* <input className="typeFilter" type="text" onChange={event => props.nameFilter(event)} placeholder="Search for names.." title="Type in a name" /> */}
