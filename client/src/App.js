@@ -3,11 +3,13 @@ import Product from "./components/product/Product";
 import Contact from "./components/contact-info/Contact";
 import Footer from "./components/footer/Footer";
 import Wrapper from "./components/Wrapper/index";
+import AfterSubmit from "./components/after-submit/AfterSubmit";
 // import products from "./products.json";
 import "./App.scss";
 import Navegation from "./components/navegation/Nav";
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import MainPage from "./components/main-page/MainPage"
+import MainPage from "./components/main-page/MainPage";
+
 
 
 class App extends React.Component {
@@ -86,12 +88,13 @@ class App extends React.Component {
         <Router>
         <React.Fragment>
           <Navegation
-            exact path= "/producttypefilter/:query" dropboxChange={this.dropboxChange}
+            dropboxChange={this.dropboxChange}
             priceChange={this.priceChange} />
           <Switch>
             <Route exact path="/" render={() => <MainPage />} />
             <Route path="/products" render={() => <Product products={this.state.products} />} />
             <Route path="/contact" render={() => <Contact />} />
+            <Route path="/contacts/add" render={() => <AfterSubmit />} />
           </Switch>
           <Footer />
           </React.Fragment>

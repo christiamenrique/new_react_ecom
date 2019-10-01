@@ -2,15 +2,21 @@ require('dotenv').config();
 const express = require('express');
 const mysql =   require("mysql");
 const path = require("path");
-const cors = require("cors");
+var morgan = require('morgan');
+const helmet = require('helmet');
+const fs = require('fs');
+
 
 const app = express()
 const PORT = 3500
 
-//   instantiate middleware    
+const accessLogStream = fs.createWriteStream(path.join(__dirname, 'morgan.log'), {flags: 'a'})
+
+//   instantiate middleware  
+app.use(morgan('dev', {stream: accessLogStream}));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(cors());
+app.use(helmet());
 
 
 //  create database connection 
@@ -82,6 +88,21 @@ app.get('/prices', (req, res) => {
   })
 })
 
+// posting a new contact
+app.post('/contacts/add', (req, res) => {
+  let text = "Thank you for contacting Us. We will be reaching back to you soon"
+  const {fullName, email, phoneNumber, comments} = req.body;
+  connection.query(`INSERT INTO contacts (fullName, email, phoneNumber, comments) Values (
+    "${fullName}",
+    "${email}",
+    "${phoneNumber}",
+    "${comments}"
+  )`, function (err, result) {
+    if (err) throw err;
+    // req.send(result);
+  })
+  res.end(text)
+})
 
 // app.post('/contacts/new', (req, res) => {
 //   connection.query("INSERT INTO contacts (fullName, email, phoneNumber, comments) Values (?)", function(err, data){ 
@@ -100,21 +121,6 @@ app.get('/prices', (req, res) => {
 //   res.send(contact);
 // })
 // })
-
-// posting a new contact
-app.post('/contacts/add', (req, res) => {
-  const {fullName, email, phoneNumber, comments} = req.body;
-  connection.query(`INSERT INTO contacts (fullName, email, phoneNumber, comments) Values (
-    "${fullName}",
-    "${email}",
-    "${phoneNumber}",
-    "${comments}"
-  )`, function (err, result) {
-    if (err) throw err;
-    console.log("1 record inserted");
-    res.send(result);
-  })
-})
 
 
 // function validateContact(contacts) {
