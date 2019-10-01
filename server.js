@@ -32,9 +32,8 @@ connection.connect(function(err) {
 //api catalogue  
 
 // index page
-// app.get('/', function (req, res) {
-//   res.send('Hello World')
-// })
+app.get('/', function (req, res) {
+})
 
 // fetch all products
 app.get('/products', (req, res) => {
@@ -102,20 +101,20 @@ app.get('/prices', (req, res) => {
 // })
 // })
 
-//posting a new contact
-// app.post('/contacts/new', (req, res) => {
-//   const {fullName, email, phoneNumber, comments} = req.body;
-//   connection.query(`INSERT INTO contacts (fullName, email, phoneNumber, comments) Values (
-//     "${fullName}",
-//     "${email}",
-//     "${phoneNumber}",
-//     "${comments}"
-//   )`, function (err, result) {
-//     if (err) throw err;
-//     console.log("1 record inserted");
-//     res.send(result);
-//   })
-// })
+// posting a new contact
+app.post('/contacts/add', (req, res) => {
+  const {fullName, email, phoneNumber, comments} = req.body;
+  connection.query(`INSERT INTO contacts (fullName, email, phoneNumber, comments) Values (
+    "${fullName}",
+    "${email}",
+    "${phoneNumber}",
+    "${comments}"
+  )`, function (err, result) {
+    if (err) throw err;
+    console.log("1 record inserted");
+    res.send(result);
+  })
+})
 
 
 // function validateContact(contacts) {

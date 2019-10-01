@@ -222,15 +222,15 @@ INSERT INTO prices (price, product_productID)
 VALUES (527.99, 1),
 		(399.99, 2),
         (373.45, 3),
-        (599.00, 4),
+        (599.65, 4),
         (1399.99,5),
         (129.99, 6),
         (489.99, 7),
-        (299.00, 8),
+        (299.45, 8),
         (129.99, 9),
         (499.99, 10),
-        (499.00, 11),
-        (379.00, 12);
+        (499.55, 11),
+        (379.35, 12);
         
 SELECT * FROM products INNER JOIN prices ON products.product_id = prices.product_productID;
 

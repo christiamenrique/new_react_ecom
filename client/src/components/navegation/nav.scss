@@ -2,16 +2,25 @@
   width: 100%;
 }
 
+.fullLogo{
+  color:white;
+}
+.fullLogo:hover{
+  color: #007bff;
+  cursor: pointer;
+  text-decoration: none;
+  
+} 
+
+.fa-store-alt:before {
+  margin-left: 60px;
+}
+
+.logo {
+  font-style: italic;
+}
+
 .header {
-  &__logo {
-    max-width: 100px;
-    border-radius: 15%;
-
-    @media screen and (min-width: 992px) {
-      min-width: 175px;
-    }
-  }
-
   &__nav-button {
     font-size: 18px;
     padding-top: 20px;

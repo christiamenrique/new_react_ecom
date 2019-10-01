@@ -32,7 +32,7 @@ class App extends React.Component {
   //dropBox filter
   dropboxChange = (event) => {
     console.log(event.target.value)
-    if (event.target.value !== 'Select Category') {
+    if (event.target.value !== 'Category') {
       fetch(`/producttypefilter/${event.target.value}`)
         .then(response => response.json())
         .then(data => {
@@ -86,7 +86,7 @@ class App extends React.Component {
         <Router>
         <React.Fragment>
           <Navegation
-            dropboxChange={this.dropboxChange}
+            exact path= "/producttypefilter/:query" dropboxChange={this.dropboxChange}
             priceChange={this.priceChange} />
           <Switch>
             <Route exact path="/" render={() => <MainPage />} />

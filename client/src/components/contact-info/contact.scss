@@ -5,6 +5,11 @@ form {
   line-height: 1.2;
 }
 
+.requiredInput{
+  color: red;
+  background-color:#f2f2f2;; 
+}
+
 form fieldset {
   width: 75%;
   margin: 0 auto;

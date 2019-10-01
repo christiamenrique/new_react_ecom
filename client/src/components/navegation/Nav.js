@@ -8,7 +8,10 @@ function Navegation(props) {
     return (
         <nav className="navbar navbar-expand-lg navbar-dark">
             <div className="header__wrapper navbar-brand">
-                <img className="logo header__logo" src="logo.png" alt="Logo of the store" />
+                <Link to="/" class="fullLogo">
+            <i class="fas fa-store-alt"></i>
+            <p class="logo">The Best Electronic</p>
+            </Link>
             </div>
             <button className="navbar-toggler" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
@@ -30,7 +33,7 @@ function Navegation(props) {
                         {/* <input className="typeFilter" type="text" onChange={event => props.nameFilter(event)} placeholder="Search for names.." title="Type in a name" /> */}
 
                         <select className="category" onChange={e => props.dropboxChange(e)}>
-                            <option value="Select Category">Category</option>
+                            <option value="Category">Category</option>
                             <option value="processor">Processor</option>
                             <option value="watch">Watch</option>
                             <option value="play console">Play Console</option>
