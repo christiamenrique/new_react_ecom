@@ -3,10 +3,10 @@ This app was created with React. I use html, css, boostrap, javascript, node.js 
 The purpose of this repository it's for education and test. But the code it's being coded in a proper way.
 
 Installation
-1- Open terminal.
-2- git clone https://github.com/christiamenrique/new_react_ecom.git.
-3- Once is clone node.js is require in order to operate the page. You can use npm install.
-4- To see the app run React app using npm start.
+* Open terminal.
+* git clone https://github.com/christiamenrique/new_react_ecom.git.
+* Once is clone node.js is require in order to operate the page. You can use npm install.
+* To see the app run React app using npm start.
 
 Features:
 * Nav bar with a logo
