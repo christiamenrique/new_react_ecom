@@ -8,9 +8,9 @@ function Navegation(props) {
     return (
         <nav className="navbar navbar-expand-lg navbar-dark">
             <div className="header__wrapper navbar-brand">
-                <Link to="/" class="fullLogo">
-                    <i class="fas fa-store-alt"></i>
-                    <p class="logo">The Best Electronic</p>
+                <Link to="/" className="fullLogo">
+                    <i className="fas fa-store-alt"></i>
+                    <p className="logo">The Best Electronic</p>
                 </Link>
             </div>
             <button className="navbar-toggler" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

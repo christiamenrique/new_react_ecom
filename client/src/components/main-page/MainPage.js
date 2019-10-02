@@ -11,7 +11,7 @@ class Main extends React.Component {
                     <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
                 </ol>
                 <div className="carousel-inner">
-                    <div class="carousel-item slide-1 active">
+                    <div className="carousel-item slide-1 active">
                         <div className="imgText">
                             <h2>Welcome to The Best Electronic Store</h2>
                             <p>We dedicate our lives to making sure that everyone is up to date with the newest technology at the best prices.</p>
