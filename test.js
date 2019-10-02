@@ -2,24 +2,36 @@ const expect = require("chai").expect;
 const request = require('request');
 
 //  The unit tests uses mocha and chai 
-// it include both positive and negative tests
-describe ("", () => {
-it('It should take the user to the home page', (done) => {
-    request('http://localhost:3500/', (err, response, body) => {
-        expect(body).to.equal(200)
-        done()
+// it include positive tests
+
+describe('Tests for "/" api endpoint', () => {
+    it("/ should send back 200 status code", (done) => {
+        request.get('/', (error, response, body) => {
+            expect(200)
+            done()
+        })
     })
+    it("/ should not send back json in the body", (done) => {
+        request.get("/", (error, response, body) => {
+            expect(body).to.not.be.an('json')
+            done()
+        })
+    })
+
+    it("/products should send back 200 status code", (done) => {
+        request.get('/products', (error, response, body) => {
+            expect(200)
+            done()
+        })
+    })
+
+    it("/contacts should send back 200 status code", (done) => {
+        request.get('/contacts', (error, response, body) => {
+            expect(200)
+            done()
+        })
+    })
+
 })
 
-it('It should take user to the product page', (done) => {
-    request('http://localhost:3500/product', (err, response, body) => {
-        expect(body).to.equal(200)
-    })
-})
 
-it('It should take user to the contact page', (done) => {
-    request('http://localhost:3500/contact', (err, response, body) => {
-        expect(body).to.equal(200)
-    })
-})
-})
