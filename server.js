@@ -1,5 +1,5 @@
 
-// loads environment variables from a .env file into process.env
+// loads environment variables from a .env file into process.env. Password protection
 require('dotenv').config();
 // provides a robust set of features to develop web and mobile applications.
 const express = require('express');
@@ -35,6 +35,7 @@ app.use("/producttypefilter/:query", apiRoutes);
 app.use("/productpricefilter/less", apiRoutes);
 app.use("/productpricefilter/more", apiRoutes);
 app.use("/contacts/add", apiRoutes)
+
 
 
 

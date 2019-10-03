@@ -1,4 +1,5 @@
 const router = require("express").Router();
+//client integration to database
 const mysql = require("mysql");
 
 //  create database connection 
@@ -17,8 +18,9 @@ connection.connect(function (err) {
   })
 });
 
-// main page
+// index route
 router.get('/', function (req, res) {
+  console.log("Home page")
 })
 
 // fetch all products
