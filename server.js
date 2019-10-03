@@ -1,11 +1,18 @@
-require('dotenv').config();
-const express = require('express');
-const path = require("path");
-var morgan = require('morgan');
-const helmet = require('helmet');
-const fs = require('fs');
-const apiRoutes = require("./apiRoutes");
 
+// loads environment variables from a .env file into process.env
+require('dotenv').config();
+// provides a robust set of features to develop web and mobile applications.
+const express = require('express');
+// will get you a PATH with all of the executables available to npm scripts
+const path = require("path");
+//Provide loggins
+var morgan = require('morgan');
+// helps to secure the Express apps
+const helmet = require('helmet');
+// responsible for all the asynchronous or synchronous file I/O operations.
+const fs = require('fs');
+// refers to how an application’s endpoints (URIs) respond to client requests.
+const apiRoutes = require("./apiRoutes");
 
 
 const app = express();
@@ -24,8 +31,17 @@ app.use(helmet());
 app.use("/", apiRoutes);
 app.use("/products", apiRoutes);
 app.use("/contacts", apiRoutes);
+app.use("/producttypefilter/:query", apiRoutes);
+app.use("/productpricefilter/less", apiRoutes);
+app.use("/productpricefilter/more", apiRoutes);
+app.use("/contacts/add", apiRoutes)
+
+
+
 
 //Launch Server
 app.listen(PORT, function () {
   console.log(`Server listening on port ${PORT}!`)
 })
+
+module.exports = app;

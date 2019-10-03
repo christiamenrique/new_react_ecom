@@ -40,19 +40,19 @@ function Contact(props) {
         <h2>Provide your personal info (won't be published) and add a comment with your feedback</h2>
         <fieldset>
           <div className="form-spacing">
-            <label htmlFor="name">Full Name <mark class="requiredInput">*</mark></label>
+            <label htmlFor="name">Full Name <mark className="requiredInput">*</mark></label>
             <input id="name" minLength="2" name="fullName" type="text" required />
           </div>
           <div className="form-spacing">
-            <label htmlFor="email">Email <mark class="requiredInput">*</mark></label>
+            <label htmlFor="email">Email <mark className="requiredInput">*</mark></label>
             <input id="email" type="email" name="email" required />
           </div>
           <div className="form-spacing">
-            <label htmlFor="phone">Phone Number <mark class="requiredInput">*</mark></label>
+            <label htmlFor="phone">Phone Number <mark className="requiredInput">*</mark></label>
             <input type="number" id="phone" name="phoneNumber" required />
           </div>
           <div className="form-spacing">
-            <label htmlFor="comment">Your comment <mark class="requiredInput">*</mark></label>
+            <label htmlFor="comment">Your comment <mark className="requiredInput">*</mark></label>
             <textarea className="form-comment" id="comments" name="comments" required></textarea>
           </div>
           <div className="form-spacing">
