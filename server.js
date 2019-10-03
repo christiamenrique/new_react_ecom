@@ -6,13 +6,13 @@ const express = require('express');
 // will get you a PATH with all of the executables available to npm scripts
 const path = require("path");
 //Provide loggins
-var morgan = require('morgan');
-// helps to secure the Express apps
+const morgan = require('morgan');
+// secure HTTP headers returned by your Express apps
 const helmet = require('helmet');
 // responsible for all the asynchronous or synchronous file I/O operations.
 const fs = require('fs');
 // refers to how an application’s endpoints (URIs) respond to client requests.
-const apiRoutes = require("./apiRoutes");
+const apiRoutes = require("./Routes/apiRoutes");
 
 
 const app = express();

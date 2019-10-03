@@ -1,12 +1,31 @@
 ### eCommerce
-This app was created with React. I use html, css, boostrap, javascript, node.js and mysql database.
-The purpose of this repository it's for education and test. But the code it's being coded in a proper way.
+This app was created with React. I use HTML, CSS, bootstrap, javascript, node.js and MySQL database.
+The purpose of this repository it's for education and test. But the code it's being coded correctly. 
+
+On this page, I am selling electronic products(tv, drones, speakers, etc..). I also have a contact page that allows the client to send a message and it will be saved in the database.
 
 ### Installation
 * Open terminal.
 * git clone https://github.com/christiamenrique/new_react_ecom.git.
-* Once is clone node.js is require in order to operate the page. You can use npm install.
-* To see the app run React app using npm start.
+* Once is clone node.js is required to operate the page. You must use npm install.
+* Before starting the application you must have a database set up with the ecomDB.sql inside the design folder.
+* To start the application run React app using npm run start.
+* I also included the automated test which test the api's. The command to run this test is npm test.
+* To run the test mocha and chai are required. The command is npm install mocha, npm install chai.
+* If you terminal stays open you can kill the terminal using sudo lsod -i tcp:3500 you will need to put your password.
+* 3500 is the port been used.
+* After running the sudo lsod -i tcp:3500 kill 20262.
+* 20262 is the number that is using on the terminal.
+* I use a mac for all this cammands some of them may be different for others brands.
+
+## Most used NPM commands 
+* npm init -- Install json packages
+* npm install -- Install the node modules
+* npm install mocha -- Install mocha
+* npm install chai -- Install chai
+* npm install express -- Install express needed for the server
+* npm run start or npm start -- Start application
+* npm test -- test the api's 
 
 ### Features:
 * Nav bar with a logo
