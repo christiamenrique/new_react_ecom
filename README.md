@@ -1,14 +1,14 @@
-eCommerce
+### eCommerce
 This app was created with React. I use html, css, boostrap, javascript, node.js and mysql database.
 The purpose of this repository it's for education and test. But the code it's being coded in a proper way.
 
-Installation
+### Installation
 * Open terminal.
 * git clone https://github.com/christiamenrique/new_react_ecom.git.
 * Once is clone node.js is require in order to operate the page. You can use npm install.
 * To see the app run React app using npm start.
 
-Features:
+### Features:
 * Nav bar with a logo
 * Footer with links to my page and copyright
 * Main page with a carousel slide
