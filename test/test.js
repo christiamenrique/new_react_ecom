@@ -4,7 +4,7 @@ const chai = require("chai");
 const expect = chai.expect();
 const request = require('request');
 const chaiHttp = require('chai-http');
-const app = require('../server');
+const app = require('../server/server');
 
 //  The unit tests uses mocha and chai 
 // it include positive tests

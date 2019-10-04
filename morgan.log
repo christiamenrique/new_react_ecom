@@ -542,3 +542,9 @@
 [0mGET /productpricefilter/less [36m304 [0m0.952 ms - -[0m
 [0mGET /products [36m304 [0m4.468 ms - -[0m
 [0mGET /products [36m304 [0m4.447 ms - -[0m
+[0mGET /products [36m304 [0m2.040 ms - -[0m
+[0mGET /favicon.ico [33m404 [0m5.818 ms - 150[0m
+[0mGET /products [32m200 [0m5.157 ms - 6399[0m
+[0mGET /products [32m200 [0m7.204 ms - 6399[0m
+[0mGET /products [36m304 [0m2.155 ms - -[0m
+[0mPOST /contacts/add [32m200 [0m20.173 ms - -[0m
