@@ -541,3 +541,4 @@
 [0mGET /productpricefilter/more [36m304 [0m1.681 ms - -[0m
 [0mGET /productpricefilter/less [36m304 [0m0.952 ms - -[0m
 [0mGET /products [36m304 [0m4.468 ms - -[0m
+[0mGET /products [36m304 [0m4.447 ms - -[0m
