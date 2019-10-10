@@ -19,7 +19,7 @@ On this page, I am selling electronic products(tv, drones, speakers, etc..). I a
 * I use a mac for all this cammands some of them may be different for others brands.
 
 ## Most used NPM commands 
-* npm init -- Install json packages
+* npm init -- Initialize json packages
 * npm install -- Install the node modules
 * npm install mocha -- Install mocha
 * npm install chai -- Install chai
